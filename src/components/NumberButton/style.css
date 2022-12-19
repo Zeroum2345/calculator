@@ -1,0 +1,21 @@
+.btnValues{
+    cursor: pointer;
+
+    font-size: 16pt;
+    color: white;
+
+    background-color: #e2e2e250;
+
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.btnValues p{
+    user-select: none;
+    margin: 0;
+}
+
+.btnValues:hover{
+    background-color: #e2e2e230;
+}
+

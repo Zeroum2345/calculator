@@ -1,0 +1,19 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+#App{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgb(9,71,61);
+    background: linear-gradient(90deg, rgba(9,71,61,1) 0%, rgba(72,145,75,1) 100%);
+}

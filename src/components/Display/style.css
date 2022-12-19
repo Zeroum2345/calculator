@@ -1,0 +1,11 @@
+#calculatorDisplay{
+    color: white;
+
+    padding: 0 32px 0 0;
+
+    font-size: 40pt;
+    text-align: end;
+
+    width: 100%;
+    height: 12%;
+}

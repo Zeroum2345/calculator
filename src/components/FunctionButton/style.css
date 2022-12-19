@@ -1,0 +1,7 @@
+.functionButton{
+    background-color: #87878750; 
+}
+
+.functionButton:hover{
+    background-color: #87878730; 
+}
