@@ -52,38 +52,34 @@ export default function Calculator() {
         }
     }
 
-    useEffect(() => {
-        console.log(openBracket)
-    }, [openBracket])
-
     return (
         <div id="calculator">
             <div id="nearHistory">{nearHistory}</div>
             <Display contentToCalculate={toCalculate} />
             <div id="buttonsBox">
                 <FunctionButton value="%" props={{onClick: () => showResult(eval(toCalculate)/100, toCalculate + '%')}}/>
-                <FunctionButton value="CE" props={{onClick: () => setToCalculate('')}}/>
-                <FunctionButton value="C" props={{onClick: () => setToCalculate('')}}/>
+                <FunctionButton value="CE" props={{onClick: () => {setToCalculate(''); setOpenBracket(0)}}}/>
+                <FunctionButton value="C" props={{onClick: () => {setToCalculate(''); setOpenBracket(0); setNearHistory('')}}}/>
                 <FunctionButton value="<" props={{onClick: () => setToCalculate(toCalculate.slice(0,-1))}}/>
                 <FunctionButton value="1/x" props={{onClick: () => showResult(1 / eval(toCalculate), "1/"+toCalculate)}}/>
                 <FunctionButton value="x²" props={{onClick: () => showResult(eval(toCalculate) ** 2, toCalculate +"²")}}/>
                 <FunctionButton value="√x" props={{onClick: () => showResult(eval(toCalculate) ** (1/2), "√"+toCalculate)}}/>
-                <FunctionButton value="/" addValue={setNumberChosen}/>
+                <FunctionButton value="/" addValue={setToCalculate} toCalculate={toCalculate}/>
                 <NumberButton value={1} addValue={setNumberChosen}/>
                 <NumberButton value={2} addValue={setNumberChosen}/>
                 <NumberButton value={3} addValue={setNumberChosen}/>
-                <FunctionButton value="*" addValue={setNumberChosen}/>
+                <FunctionButton value="*" addValue={setToCalculate} toCalculate={toCalculate}/>
                 <NumberButton value={4} addValue={setNumberChosen}/>
                 <NumberButton value={5} addValue={setNumberChosen}/>
                 <NumberButton value={6} addValue={setNumberChosen}/>
-                <FunctionButton value="-" addValue={setNumberChosen}/>
+                <FunctionButton value="-" addValue={setToCalculate} toCalculate={toCalculate}/>
                 <NumberButton value={7} addValue={setNumberChosen}/>
                 <NumberButton value={8} addValue={setNumberChosen}/>
                 <NumberButton value={9} addValue={setNumberChosen}/>
-                <FunctionButton value="+" addValue={setNumberChosen}/>
+                <FunctionButton value="+" addValue={setToCalculate} toCalculate={toCalculate}/>
                 <FunctionButton value="()" props={{onClick: () => addBrackets()}}/>
                 <NumberButton value={0} addValue={setNumberChosen}/>
-                <FunctionButton value="." addValue={setNumberChosen}/>
+                <FunctionButton value="." addValue={setToCalculate} toCalculate={toCalculate}/>
                 <FunctionButton value="=" props={{style: {backgroundColor: "orange"}, onClick: () => showResult(eval(toCalculate))}}/>
             </div>
         </div>
